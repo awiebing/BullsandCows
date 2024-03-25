@@ -1,0 +1,122 @@
+<h2>Inheritance</h2>
+<div class="step-text">
+<p><strong><a class="theory-lookup" href="/learn/step/3572" rel="noopener noreferrer nofollow" target="_blank" title="In Java, inheritance is a mechanism for deriving a new class from an existing one, known as the superclass, allowing the new class to acquire its fields and methods. | This principle enables code reuse and convenient class hierarchy building. Inheritance is indicated by the keyword extends and supports single inheritance, with a superclass potentially having multiple subclasses. Constructors are not inherited, but the superclass's constructor can be invoked from the subclass using the super keyword.">Inheritance</a></strong> is a <a class="theory-lookup" href="/learn/step/10973" rel="noopener noreferrer nofollow" target="_blank" title="Mechanism in Java refers to the set of rules and processes that govern how the Java programming language operates. | This includes concepts such as syntax, keywords, identifiers, comments, and whitespace. Syntax is a set of rules that define how a program needs to be written in order to be valid in Java. Keywords are words that have a special meaning in the programming language, and cannot be used as variable names in your own program. Identifiers or names are words that refer to something in a program, such as a variable or a function name.">mechanism</a> for deriving a new class from another class (<a class="theory-lookup" href="/learn/step/3597" rel="noopener noreferrer nofollow" target="_blank" title="In Java, the base class is the class from which the subclass is derived. | It is also known as the superclass, parent class, or root class. Every class in Java implicitly extends the Object class, which is the root of the class hierarchy. The base class provides a common interface for all its subclasses and defines their shared behavior. A subclass inherits all public and protected fields and methods from its base class, and can also add new fields and methods. This inheritance mechanism allows for code reuse and a more organized class hierarchy.">base class</a>). The new class acquires some fields and methods of the base class. Inheritance is one of the main principles of <a class="theory-lookup" href="/learn/step/4727" rel="noopener noreferrer nofollow" target="_blank" title="In Java, an object is an instance of a class. | It represents a real-world entity with a specific state and behavior. The state of an object is defined by the values assigned to its fields or attributes, while its behavior is defined by the methods it can execute. Objects are created on the heap and are accessed through references, which are variables that store the memory address of the object.">object</a>-oriented programming. It allows developers to build convenient <a class="theory-lookup" href="/learn/step/3563" rel="noopener noreferrer nofollow" target="_blank" title="In Java, class hierarchy is a way to organize classes where a class can be derived from another class, making it a subclass, and the class it is derived from is called the superclass or base class. | This allows for objects to be referred to in different ways and for a class to inherit all public and protected fields and methods from the superclass, while also being able to add new fields and methods.">class hierarchies</a> and reuse existing code.</p>
+<h5 id="extending-classes">Extending classes</h5>
+<p>When it comes to inheritance, there are several terms. A class <strong>derived</strong> from another class is called a <strong><a class="theory-lookup" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="A subclass in Java is a class that is derived from another class, also known as a superclass or base class. | Inheritance is used to derive a new class from another, using the keyword extends. A subclass inherits all public and protected fields and methods from the superclass and can also add new fields and methods. A subclass can be referred to using either a subclass reference or a superclass reference, the latter of which can refer to any subclass object derived from that superclass.">subclass</a></strong> (it's also known as a <strong><a class="theory-lookup" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a derived class is a subclass that inherits all public and protected fields and methods from its superclass. | It can also add new fields and methods, and the inherited and added members will be used in the same way. A derived class is related to its superclass through a parent-child relationship, where the derived class is the child and the superclass is the parent. This relationship allows for polymorphism, where a derived class object can be referred to using a superclass reference variable, providing flexibility and reusability in object-oriented programming.">derived class</a></strong>, <strong><a class="theory-lookup" href="/learn/step/3610" rel="noopener noreferrer nofollow" target="_blank" title="In Java, the keyword extends is used in the context of inheritance and type bounds. | When used with a class, it indicates that the class is a subclass of the class it extends, inheriting its properties and methods. When used with a type parameter, extends sets an upper bound, meaning the type parameter can only be replaced by a type that is that upper bound or a subtype of it. This allows for more specific type constraints and enables the use of polymorphism in generic programming.">extended</a> class</strong> or <strong><a class="theory-lookup" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a child class is also known as a subclass, and it's a class that is derived from another class, called the superclass or parent class. | A child class inherits all public and protected fields and methods from its superclass and can also add new fields and methods. Java doesn't support multiple-class inheritance, meaning that a class can only inherit from a single superclass, but a superclass can have multiple subclasses. Child classes can be referred to using either their own reference or a reference of their superclass.">child class</a></strong>). The class from which the subclass is derived is called a <strong><a class="theory-lookup" href="/learn/step/3585" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a superclass is the class from which a subclass is derived. | It is also known as a base class or a parent class. Inheritance is the mechanism by which one class acquires the properties (fields) and behaviors (methods) of another. With inheritance, the subclass inherits all the public and protected fields and methods from the superclass. A subclass can also add new fields and methods, and the inherited and added members will be used in the same way.">superclass</a></strong> (also a <strong>base class</strong> or a <strong><a class="theory-lookup" href="/learn/step/3609" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a parent class, also known as a superclass or base class, is a class that is extended by another class, known as a subclass or derived class. | It serves as a blueprint for the subclass, providing it with inherited fields and methods. A parent class can have multiple child classes, but a child class can only have one parent class due to Java's single inheritance feature. The parent class reference can be used to refer to a subclass object, allowing for polymorphism and code reuse.">parent class</a>)</strong>.</p>
+<p>To derive a new class from another, the <a class="theory-lookup" href="/learn/step/3521" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a keyword is a reserved word that has a special meaning in the programming language. | These words cannot be used as variable names in your own program. Keywords are part of the syntax, a set of rules that define how a program needs to be written in order to be valid. For instance, the keyword 'final' is used to declare a constant variable, indicating that its value cannot be changed after being initialized. However, the use of keywords can sometimes make code less readable due to boilerplate code, hence their usage should be standardized in a project.">keyword</a> <code class="language-java">extends</code> is used. The common syntax is shown below.</p>
+<pre><code class="language-java">class SuperClass { }
+
+class SubClassA extends SuperClass { }
+
+class SubClassB extends SuperClass { }
+
+class SubClassC extends SubClassA { }</code></pre>
+<p>There are important points about inheritance in Java:</p>
+<ul>
+<li>
+<p>Java doesn't support multiple-class inheritance, meaning that a class can only <a class="theory-lookup" href="/learn/step/19707" rel="noopener noreferrer nofollow" target="_blank" title="In Java, inherited refers to the mechanism by which a subclass acquires some fields and methods from a superclass through inheritance. | Inheritance is a fundamental principle of object-oriented programming that allows developers to build a class hierarchy and reuse existing code. A subclass inherits all public and protected fields and methods from the superclass and can also add new fields and methods. The inherited and added members are used in the same way.">inherit</a> from a single superclass;</p>
+</li>
+<li>
+<p>a class hierarchy can have multiple <a class="theory-lookup" href="/learn/step/6001" rel="noopener noreferrer nofollow" target="_blank" title="In Java, 'level' doesn't have a specific meaning on its own. | It is often used as a variable or method name, but it doesn't refer to a built-in concept in the language. If you're referring to a specific context where 'level' is used in Java, please provide more details so I can give a more accurate answer.">levels</a> (class <code class="language-java">C</code> can <a class="theory-lookup" href="/learn/step/3609" rel="noopener noreferrer nofollow" target="_blank" title="An extended class in Java is a class that is derived from another class, known as the superclass or base class, through the process of inheritance. | This allows the extended class to inherit the properties and methods of the superclass, while also being able to add its own unique features and behaviors. The extended class can also override the methods of the superclass to provide its own implementation. This mechanism promotes code reusability and modularity, making it a fundamental concept in object-oriented programming.">extend class</a> <code class="language-java">B</code> that extends class <code class="language-java">A</code>);</p>
+</li>
+<li>
+<p>a superclass can have more than one subclass.</p>
+</li>
+</ul>
+<p>A subclass inherits all <a class="theory-lookup" href="/learn/step/3589" rel="noopener noreferrer nofollow" target="_blank" title="In Java, 'public' is an access modifier, which is a special keyword that specifies who is allowed to use your code or a part of it. | It can be placed in front of any field, method, or class. The main reasons to take access under control are clarity and safety of code. The keyword 'public' means that the method is available to everyone, making it accessible from any other class in the application.">public</a> and <a class="theory-lookup" href="/learn/step/3589" rel="noopener noreferrer nofollow" target="_blank" title="In Java, protected is an access modifier that allows a class member to be accessed from classes in the same package and all subclasses of this class. | It is less restricting than package-private, but more restricting than public. The protected option is commonly used for constructors and methods representing the class API, but not frequently used with fields. It is important to note that a protected class member cannot be accessed from an unrelated class outside of its package.">protected</a> fields and methods from the superclass. A subclass can also add new fields and methods. The inherited and added members will be used in the same way.</p>
+<p>A subclass doesn't inherit <a class="theory-lookup" href="/learn/step/3599" rel="noopener noreferrer nofollow" target="_blank" title="A private field in Java is a class member that is declared with the private access modifier, which restricts its access to only the class where it is defined. | It cannot be accessed directly from outside the class, but can be manipulated through public getter and setter methods, also known as accessor and mutator methods, respectively. This encapsulation ensures data integrity and security, as well as hides implementation details from other classes.">private fields</a> and methods from the superclass. However, if the superclass has public or protected methods for accessing its private fields, these members can be used inside subclasses.</p>
+<p>Constructors are not inherited, but the superclass's constructor can be invoked from the subclass using the special keyword <code class="language-java">super</code>. This keyword is discussed in more detail in another topic.</p>
+<p>If you'd like the base class members to be accessible from all subclasses but not from the outside code (excluding the same package), use the access modifier <code class="language-java">protected</code>.</p>
+<p><strong>Inheritance</strong> represents the <strong>IS-A</strong> relationship. A base class represents the general and a subclass represents the particular or specific.</p>
+<h5 id="an-example-of-a-class-hierarchy">An example of a class hierarchy</h5>
+<p>Let's consider a more graphic example. A telecommunication company serves <a class="theory-lookup" href="/learn/step/14268" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a client refers to an entity that uses or consumes the services provided by another entity, typically a server. | It can be a program, a system, or even a user that interacts with the server to access the resources or functionalities it offers. The client-server relationship is a fundamental concept in distributed systems, where different components communicate and collaborate over a network to achieve a common goal.">clients</a>. It has a small staff consisting only of managers and programmers. Let's consider a class hierarchy for people associated with the company's activities (including clients).</p>
+<p>At first, we present the hierarchy as a figure. An arrow indicates that one class extends another one.</p>
+<p style="text-align: center;"><picture><img alt="The class hierarchy for the telecommunication company" height="301" src="https://ucarecdn.com/204baef8-7807-4f39-b853-a3b53de89d14/" width="398"/></picture></p>
+<p style="text-align: center;"><strong>The class hierarchy for the telecommunication company</strong></p>
+<ul>
+<li>
+<p>the base class <code class="language-java">Person</code> has fields for storing common <a class="theory-lookup" href="/learn/step/9723" rel="noopener noreferrer nofollow" target="_blank" title="In Java, data is separated into two main categories: primitive types and reference types. | Primitive types are built-in data types provided by the language, such as int for integers, and they are represented as lowercase keywords. Reference types, on the other hand, represent objects and are typically created using the new keyword, which allocates memory for the object and initializes the variable. String is a commonly used reference type, and it can be instantiated using either a constructor or a literal, like Hello, World! .">data</a>: name, year of birth, and address;</p>
+</li>
+<li>
+<p>the class <code class="language-java">Client</code> has additional fields to store the contract number and status (gold or not);</p>
+</li>
+<li>
+<p>the class <code class="language-java">Employee</code> stores the start date of work for the company and the salary;</p>
+</li>
+<li>
+<p>the class <code class="language-java">Programmer</code> has an array of the programming languages a programmer uses;</p>
+</li>
+<li>
+<p>the class <code class="language-java">Manager</code> may have a dazzling smile.</p>
+</li>
+</ul>
+<p>Let's see the code:</p>
+<pre><code class="language-java">class Person {
+    protected String name;
+    protected int yearOfBirth;
+    protected String address;
+
+    // public getters and setters for all fields here
+}
+
+class Client extends Person {
+    protected String contractNumber;
+    protected boolean gold;
+
+    // public getters and setters for all fields here
+}
+
+class Employee extends Person {
+    protected Date startDate;
+    protected Long salary;
+
+    // public getters and setters for all fields here
+}
+
+class Programmer extends Employee {
+    protected String[] programmingLanguages;
+
+    public String[] getProgrammingLanguages() {
+        return programmingLanguages;
+    }
+
+    public void setProgrammingLanguages(String[] programmingLanguages) {
+        this.programmingLanguages = programmingLanguages;
+    }
+}
+
+class Manager extends Employee {
+    protected boolean smile;
+
+    public boolean isSmile() {
+        return smile;
+    }
+
+    public void setSmile(boolean smile) {
+        this.smile = smile;
+    }
+}</code></pre>
+<p>This hierarchy has two levels and five classes overall. All fields are <code class="language-java">protected</code> , which means they are visible to subclasses. Each class also has public <a class="theory-lookup" href="/learn/step/3599" rel="noopener noreferrer nofollow" target="_blank" title="In Java, getters and setters are methods used to access and modify the private fields of a class, while adhering to the principles of data encapsulation. | They are identified by their naming convention, with getters starting with 'get' followed by the variable name, and setters starting with 'set' followed by the variable name. Getters for boolean fields start with 'is'. They provide a way for external code to interact with the class without directly depending on the fields, allowing for greater control and flexibility in managing the data within the class.">getters and setters</a>, but some are skipped in the code as these classes use the default <a class="theory-lookup" href="/learn/step/3535" rel="noopener noreferrer nofollow" target="_blank" title="A no-argument constructor in Java is a constructor that takes no arguments and is automatically provided by the Java compiler if no constructors are explicitly defined in a class. | It initializes all fields with their default values. If a specific constructor is defined, the default constructor will not be created. No-argument constructors are useful in cases when any default value is better than no value at all. They allow you to create an instance of the class using the no-argument default constructor, in which all fields will be filled with the default value of their type.">no-argument constructor</a>.</p>
+<p>Let's create an object of the <code class="language-java">Programmer</code> class and fill the inherited fields using the inherited setters. To read the values of the fields, we can use inherited getters.</p>
+<pre><code class="language-java">Programmer p = new Programmer();
+
+p.setName("John Elephant");
+p.setYearOfBirth(1985);
+p.setAddress("Some street, 15");
+p.setStartDate(new Date());
+p.setSalary(500_000L);
+p.setProgrammingLanguages(new String[] { "Java", "Scala", "Kotlin" });
+
+System.out.println(p.getName()); // John Elephant
+System.out.println(p.getSalary()); // 500000
+System.out.println(Arrays.toString(p.getProgrammingLanguages())); // [Java, Scala, Kotlin]</code></pre>
+<p>We also can create an instance of any class included in the considered hierarchy.</p>
+<p>So,<strong> inheritance</strong> provides a powerful mechanism for code reuse and writing convenient hierarchies. Many things in the real world can be simulated, like hierarchies from a more general to a more particular concept.</p>
+<h5 id="final-classes">Final classes</h5>
+<p>If a class is declared with the keyword <code class="language-java">final</code>, it cannot have subclasses at all.</p>
+<pre><code class="language-java">final class SuperClass { }</code></pre>
+<p>If you try to extend the class, a compile-time error will occur.</p>
+<p>Some standard classes are declared as <a class="theory-lookup" href="/learn/step/7427" rel="noopener noreferrer nofollow" target="_blank" title="In Java, final is a keyword used to declare a variable as a constant, meaning its value cannot be changed once assigned. | It can also be used to prevent inheritance or to ensure that a method cannot be overridden in a subclass. Additionally, final can be used in the context of local variables, method parameters, and class declarations, each with its own specific behavior and implications. Overall, final provides a way to ensure immutability and consistency in Java programming.">final</a>: <code class="language-java">Integer</code>, <code class="language-java">Long</code>, <code class="language-java">String</code>, <code class="language-java">Math</code>. They cannot be extended from.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p><strong>Inheritance</strong> allows you to build class hierarchies where subclasses (children) take some fields and methods of the superclass (parent). Such a hierarchy can have multiple levels, but every class can inherit only from a single superclass. A good class hierarchy helps to avoid code duplication and makes your program more modular. If a class should not have subclasses, it should be marked as <code class="language-java">final</code>.</p>
+</div>
